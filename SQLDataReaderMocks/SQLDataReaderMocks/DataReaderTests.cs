@@ -19,5 +19,12 @@ namespace SQLDataReaderMocks
             Assert.AreEqual(goodCast, Int16.MaxValue);
         }
 
+        [TestMethod]
+        public void Try_Cast_Null_To_Int32_Should_Not_Fail()
+        {
+            int? goodCast = _nullReturnSystemUnderTest.ReadTranType();
+            Assert.IsNotNull(goodCast);
+            Assert.AreEqual(goodCast, 0);
+        }
     }
 }
